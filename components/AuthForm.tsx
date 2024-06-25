@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form"
 import CustomInput from './CustomInput'
 import { authFormSchema } from '@/lib/utils'
 import { Loader2 } from 'lucide-react'
-import { signIn, signUp } from '@/lib/actions/user.actions'
+import {  signIn, signUp } from '@/lib/actions/user.actions'
 import { useRouter } from 'next/navigation'
 
 
@@ -28,6 +28,7 @@ const AuthForm = ({type} : {type:string}) => {
     const router = useRouter();
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+   
 
     const formSchema = authFormSchema(type);
       // 1. Define your form.
@@ -102,13 +103,13 @@ const AuthForm = ({type} : {type:string}) => {
             <div className='flex gap-4'>
             <CustomInput
              control={form.control}
-             name='firstname'
+             name='firstName'
              label='First Name'
              placeholder='Enter your First name'
             />
              <CustomInput
              control={form.control}
-             name='lastname'
+             name='lastName'
              label='Last Name'
              placeholder='Enter your Last name'
             />
@@ -129,7 +130,7 @@ const AuthForm = ({type} : {type:string}) => {
             />
             <CustomInput
              control={form.control}
-             name='postalCode'
+             name='postalcode'
              label='Postal Code'
              placeholder='Example : 0000'
             />
